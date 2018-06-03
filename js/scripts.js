@@ -9,12 +9,12 @@ function getQuote() {
 }
 
 function createTweet(input) {
-    var data = input[0];
-    if(data != null) {
-    	getQuote();
-    } else {
-        paragraph.innerHTML = "error";  
+
+    if (!input.length) {
+    	return paragraph.innerHTML = "error";  
     }
+
+    var data = input[0];
 
     var quoteText = $(data.content).text().trim();
     var quoteAuthor = data.title;
